@@ -1,0 +1,16 @@
+C:\Users\Administrator\source\repos\PokerGame\bin\Debug\net5.0\PokerGame.exe
+C:\Users\Administrator\source\repos\PokerGame\bin\Debug\net5.0\PokerGame.deps.json
+C:\Users\Administrator\source\repos\PokerGame\bin\Debug\net5.0\PokerGame.runtimeconfig.json
+C:\Users\Administrator\source\repos\PokerGame\bin\Debug\net5.0\PokerGame.runtimeconfig.dev.json
+C:\Users\Administrator\source\repos\PokerGame\bin\Debug\net5.0\PokerGame.dll
+C:\Users\Administrator\source\repos\PokerGame\bin\Debug\net5.0\ref\PokerGame.dll
+C:\Users\Administrator\source\repos\PokerGame\bin\Debug\net5.0\PokerGame.pdb
+C:\Users\Administrator\source\repos\PokerGame\obj\Debug\net5.0\PokerGame.csproj.AssemblyReference.cache
+C:\Users\Administrator\source\repos\PokerGame\obj\Debug\net5.0\PokerGame.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\Administrator\source\repos\PokerGame\obj\Debug\net5.0\PokerGame.AssemblyInfoInputs.cache
+C:\Users\Administrator\source\repos\PokerGame\obj\Debug\net5.0\PokerGame.AssemblyInfo.cs
+C:\Users\Administrator\source\repos\PokerGame\obj\Debug\net5.0\PokerGame.csproj.CoreCompileInputs.cache
+C:\Users\Administrator\source\repos\PokerGame\obj\Debug\net5.0\PokerGame.dll
+C:\Users\Administrator\source\repos\PokerGame\obj\Debug\net5.0\ref\PokerGame.dll
+C:\Users\Administrator\source\repos\PokerGame\obj\Debug\net5.0\PokerGame.pdb
+C:\Users\Administrator\source\repos\PokerGame\obj\Debug\net5.0\PokerGame.genruntimeconfig.cache
