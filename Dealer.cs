@@ -8,13 +8,18 @@ using PokerGame.Interfaces;
 
 namespace PokerGame
 {
-    class Dealer : Deck, IDealer
+    //Possibly refactor displayPlayerHand & displayCommunityCards
+
+    class Dealer : Deck
     {
         private Card[] playerHand;
         private Card[] computerHand;
+        private Card[] sortedPlayerHand;
+        private Card[] sortedComputerHand;
         private Card[] communityCards;
         public Deck deck = new Deck();
         public int totalCardsDealt;
+        public const int handSize = 2;
 
         public Dealer()
         {
@@ -35,8 +40,6 @@ namespace PokerGame
 
         public void DealAllCards()
         {
-
-            
             // Deal cards to all players, one at a time
             // Deal card to player, computer, player, computer
             int cardInHand = 0;
@@ -59,7 +62,7 @@ namespace PokerGame
         {
             Console.WriteLine("Your Hand:");
 
-            for(int i=0; i<2; i++)
+            for(int i=0; i<handSize; i++)
             {
                 switch (playerHand[i].cardSuit.ToString())
                 {
@@ -74,6 +77,28 @@ namespace PokerGame
                         break;
                     case "Spades":
                         Console.Write(playerHand[i].cardFaceValue + " \u2660 ");
+                        break;
+                }
+            }
+
+            Console.WriteLine("");
+            Console.WriteLine("Computer Hand:");
+
+            for (int i = 0; i < handSize; i++)
+            {
+                switch (computerHand[i].cardSuit.ToString())
+                {
+                    case "Diamonds":
+                        Console.Write(computerHand[i].cardFaceValue + " \u2666 ");
+                        break;
+                    case "Hearts":
+                        Console.Write(computerHand[i].cardFaceValue + " \u2665 ");
+                        break;
+                    case "Clubs":
+                        Console.Write(computerHand[i].cardFaceValue + " \u2663 ");
+                        break;
+                    case "Spades":
+                        Console.Write(computerHand[i].cardFaceValue + " \u2660 ");
                         break;
                 }
             }
@@ -104,9 +129,12 @@ namespace PokerGame
             }
         }
 
-        public void EvaluateHands()
+        public void EvaluateHands(Card[] hand)
         {
-            Console.WriteLine("Pog");
+            Console.WriteLine("Evaluating...");
+            Card[] handToEvaluate = hand.Concat(communityCards).ToArray();
+
+
         }
 
     }

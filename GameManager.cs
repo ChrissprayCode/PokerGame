@@ -3,7 +3,7 @@ using PokerGame.Models;
 
 namespace PokerGame
 {
-    class Program
+    class GameManager
     {
         static void Main(string[] args)
         {
@@ -12,7 +12,6 @@ namespace PokerGame
 
             //create new deck, shuffle, and deal
             dealer.Deal();
-
 
         }
     }
