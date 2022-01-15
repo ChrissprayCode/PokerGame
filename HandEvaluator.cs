@@ -9,18 +9,18 @@ using PokerGame.Interfaces;
 
 namespace PokerGame
 {
-    class HandEvaluator
+    class HandEvaluator : IHandEvaluator
     {
-        /* Royal Flush
-        * Straight Flush
-        * Four of a Kind
-        * Full house
-        * Flush
-        * Straight
-        * Three of a Kind
-        * Two Pair
-        * Pair
-        * High Card
+        /* Royal Flush - 10,J,Q,K,A (Same Suit)
+        * Straight Flush - Straight, Same Suit
+        * Four of a Kind - Four of a kind
+        * Full house - 3 of 1 card, 2 of other (any suit)
+        * Flush - 5 cards of same suit
+        * Straight - 5 numbers in a row
+        * Three of a Kind - three of the same card
+        * Two Pair - two pairs
+        * Pair - single pair
+        * High Card - nothing, just pick highest card
         */
 
         public bool IsRoyalFlush(Card[] hand)

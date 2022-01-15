@@ -10,7 +10,7 @@ namespace PokerGame
 {
     //Possibly refactor displayPlayerHand & displayCommunityCards
 
-    class Dealer : Deck
+    class Dealer : Deck, IDealer
     {
         private Card[] playerHand;
         private Card[] computerHand;
@@ -34,7 +34,7 @@ namespace PokerGame
             CreateDeck();
             DealAllCards();
             DisplayPlayerHand();
-            DisplayCommunityCards();
+            //CommunityCardHandler();
             //EvaluateHands();
         }
 
@@ -54,6 +54,7 @@ namespace PokerGame
             //deal the community cards (5 cards in the middle)
             for(int i=totalCardsDealt; i < totalCardsDealt + 5; i++)
             {
+                //Add in card burning
                 communityCards[i - totalCardsDealt] = getDeck[i];
             }
         }
@@ -105,11 +106,32 @@ namespace PokerGame
             Console.WriteLine();
         }
 
-        public void DisplayCommunityCards()
+        public void CommunityCardHandler(string round)
         {
             //display community cards
             Console.WriteLine("Community Cards:");
-            for (int i = 0; i < 5; i++)
+
+            switch (round)
+            {
+                case "preFlop":
+                    DisplayCommunityCards(0);
+                    break;
+                case "flop":
+                    DisplayCommunityCards(3);
+                    break;
+                case "turn":
+                    DisplayCommunityCards(4);
+                    break;
+                case "river":
+                    DisplayCommunityCards(5);
+                    break;
+            }
+
+        }
+
+        public void DisplayCommunityCards(int numOfCardsToShow)
+        {
+            for (int i = 0; i < numOfCardsToShow; i++)
             {
                 switch (communityCards[i].cardSuit.ToString())
                 {

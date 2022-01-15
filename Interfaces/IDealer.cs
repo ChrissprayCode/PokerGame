@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using PokerGame.Models;
 
 namespace PokerGame.Interfaces
 {
@@ -12,8 +13,8 @@ namespace PokerGame.Interfaces
         void Deal();
         void DealAllCards();
         void DisplayPlayerHand();
-        void DisplayCommunityCards();
-        void EvaluateHands();
+        void CommunityCardHandler(string round);
+        void EvaluateHands(Card[] hand);
 
     }
 }

@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace PokerGame.Models
 {
-    class Card
+    public class Card
     {
         public enum Suit
         {
