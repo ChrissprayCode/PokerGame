@@ -33,9 +33,6 @@ namespace PokerGame
         {
             CreateDeck();
             DealAllCards();
-            DisplayPlayerHand();
-            //CommunityCardHandler();
-            //EvaluateHands();
         }
 
         public void DealAllCards()
@@ -43,6 +40,7 @@ namespace PokerGame
             // Deal cards to all players, one at a time
             // Deal card to player, computer, player, computer
             int cardInHand = 0;
+            // ++ numofPlayers, until i <= numofPlayers+1
             for(int i=0; i < 3; i+=2)
             {
                 playerHand[cardInHand] = getDeck[i];
@@ -51,12 +49,17 @@ namespace PokerGame
                 totalCardsDealt += 2;
             }
 
+            
             //deal the community cards (5 cards in the middle)
-            for(int i=totalCardsDealt; i < totalCardsDealt + 5; i++)
+            for(int i=totalCardsDealt; i < totalCardsDealt + 5; i++) //i=4, until i=9
             {
-                //Add in card burning
                 communityCards[i - totalCardsDealt] = getDeck[i];
             }
+        }
+
+        public void BurnCard()
+        {
+            totalCardsDealt++;
         }
 
         public void DisplayPlayerHand()
@@ -83,6 +86,7 @@ namespace PokerGame
             }
 
             Console.WriteLine("");
+            /*
             Console.WriteLine("Computer Hand:");
 
             for (int i = 0; i < handSize; i++)
@@ -103,26 +107,28 @@ namespace PokerGame
                         break;
                 }
             }
+            */
             Console.WriteLine();
+            
         }
 
-        public void CommunityCardHandler(string round)
+        public void CommunityCardHandler(int round)
         {
             //display community cards
             Console.WriteLine("Community Cards:");
 
             switch (round)
             {
-                case "preFlop":
+                case 0:
                     DisplayCommunityCards(0);
                     break;
-                case "flop":
+                case 1:
                     DisplayCommunityCards(3);
                     break;
-                case "turn":
+                case 2:
                     DisplayCommunityCards(4);
                     break;
-                case "river":
+                case 3:
                     DisplayCommunityCards(5);
                     break;
             }
@@ -149,6 +155,7 @@ namespace PokerGame
                         break;
                 }
             }
+            Console.WriteLine("");
         }
 
         public void EvaluateHands(Card[] hand)

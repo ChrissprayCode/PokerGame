@@ -13,8 +13,9 @@ namespace PokerGame.Interfaces
         void Deal();
         void DealAllCards();
         void DisplayPlayerHand();
-        void CommunityCardHandler(string round);
+        void CommunityCardHandler(int round);
         void EvaluateHands(Card[] hand);
+        void BurnCard();
 
     }
 }
